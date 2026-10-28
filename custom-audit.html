@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#282828"><meta name="description" content="Create custom internal audits with their own questions, ratings and Excel export."><title>Custom audit</title><link rel="icon" href="data:,"><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="checklists.css"><script type="module" src="custom-audit.js"></script>  <link rel="stylesheet" href="print.css">
+</head>
+<body data-page="custom-audit">
+<a class="skip-link" href="#main">Skip to custom audit</a>
+<header class="topbar"><div class="header-inner"><a class="wordmark" href="index.html"><span class="mark" aria-hidden="true">S<span>R</span></span><span>Site Ready<small>QUALITY MANAGEMENT WORKSPACE</small></span></a><nav aria-label="Main navigation"><a href="index.html">ISO 9001:2026</a><a href="requirements.html">Standard</a><a href="readiness.html">Onboarding</a><a href="audit.html">Internal audit</a><a href="quick-audit.html">Quick audit</a><a href="custom-audit.html" aria-current="page">Custom audit</a><a href="checklists.html">Checklists</a><a href="dashboard.html">Dashboards</a><a href="shop-reviews.html">Shop</a><a href="material-inspections.html">Inspections</a></nav></div></header>
+<main id="main" class="checklist-page"><div class="breadcrumbs">WORKSPACE <span>/</span> <a href="index.html">ISO 9001:2026</a> <span>/</span> CUSTOM AUDIT</div>
+<section class="page-heading"><div><p class="eyebrow">INTERNAL SITE AUDIT</p><h1>Custom audit</h1></div><div class="file-actions"><button class="button" type="button" id="import-excel">↑ Import Excel</button><input id="import-file" type="file" accept=".xlsx,.xls,.csv" hidden><button class="button button-primary" type="button" id="export-xlsx">↓ Excel</button></div></section>
+<div class="custom-tools"><label class="custom-field">Audit<select id="audit-select"></select></label><label class="custom-field">Name<input id="audit-name" type="text" autocomplete="off"></label><div class="custom-actions"><button class="button" type="button" id="new-audit">New audit</button><button class="text-button" type="button" id="delete-audit">Delete audit</button></div></div>
+<p id="workbook-status" class="workbook-status" role="status" aria-live="polite"></p>
+<div id="checklists"></div>
+</main>
+<script type="module" src="print.js"></script><script type="module" src="demo.js"></script></body></html>

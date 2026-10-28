@@ -1,0 +1,88 @@
+/* Print to PDF layout for the assessment and checklist pages. Loaded after styles.css. */
+@page {
+  size: A4;
+  margin: 17mm 15mm 19mm;
+  @bottom-left { content: "Site Ready · Quality management workspace"; font: 7pt Arial, Helvetica, sans-serif; color: #8a8a8a; }
+  @bottom-right { content: counter(page) " / " counter(pages); font: 7pt Arial, Helvetica, sans-serif; color: #8a8a8a; }
+}
+
+.print-cover { display: none; }
+.print-value { display: none; }
+
+@media print {
+  *, *::before, *::after {
+    font-family: Arial, Helvetica, sans-serif !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  html, body { background: #fff !important; color: #1f1f1f; font-size: 9.5pt; line-height: 1.45; }
+  a { color: inherit; text-decoration: none; }
+
+  .skip-link, .topbar, .breadcrumbs, .page-heading .file-actions, .file-actions, .page-description,
+  .text-button, #restore-questions, .save-state, .toast, dialog, footer, .workbook-status,
+  .custom-tools, .quick-tools, .checklist-add, .checklist-footer, .question-remove, .question-delete,
+  .chevron, .na-hint, .section-progress, .heading-badge, .count-badge, .edition-notice, .checklist-toolbar,
+  .clause-summary, .workbook-status { display: none !important; }
+
+  main, .checklist-page { max-width: none !important; margin: 0 !important; padding: 0 !important; }
+
+  .print-cover { display: block; border-bottom: 1.2pt solid #1f1f1f; padding: 0 0 9pt; margin: 0 0 16pt; break-after: avoid; }
+  .print-brand { margin: 0; font-size: 7pt; letter-spacing: .16em; text-transform: uppercase; color: #6b6b6b; }
+  .print-cover h1 { margin: 5pt 0 3pt; font-size: 21pt; line-height: 1.15; color: #111; }
+  .print-meta { margin: 0; font-size: 8.5pt; color: #6b6b6b; }
+
+  .page-heading { margin: 0 0 12pt; }
+  .page-heading h1 { display: none; }
+
+  h2 { margin: 0 0 6pt; font-size: 12pt; color: #111; break-after: avoid; }
+  h3 { font-size: 10pt; color: #111; break-after: avoid; }
+
+  .section-heading { margin: 16pt 0 8pt; break-after: avoid; }
+  .section-heading .eyebrow, .eyebrow { font-size: 7pt; letter-spacing: .14em; color: #6b6b6b; margin: 0 0 3pt; }
+
+  .section-head { padding: 6pt 8pt; background: #efefef !important; border: 0; border-radius: 0; break-after: avoid; }
+  .section { margin: 0 0 10pt; border: 0; break-inside: auto; }
+  .section-items { display: block !important; padding: 0 2pt; }
+
+  .clause-checklist { margin: 0 0 14pt; break-inside: auto; }
+  .clause-checklist h2 { padding-bottom: 4pt; border-bottom: .6pt solid #bdbdbd; }
+
+  .question, .checklist-question {
+    display: flex; flex-wrap: wrap; align-items: flex-start; gap: 3pt 14pt;
+    margin: 0; padding: 7pt 0; border-bottom: .5pt solid #dcdcdc;
+    break-inside: avoid;
+  }
+  .question-copy, .checklist-question-text { flex: 1 1 0; min-width: 0; }
+  .question-controls { width: 180pt; flex: 0 0 180pt; display: grid; gap: 4pt; }
+  .checklist-question .print-value { width: 130pt; flex: 0 0 130pt; font-weight: 600; }
+  .evidence-field { flex: 0 0 100%; display: block; margin: 0; }
+  .question-id, .quick-ref { display: block; font-size: 7pt; letter-spacing: .06em; color: #6b6b6b; margin-bottom: 2pt; }
+  .question-title, .quick-question, .checklist-question-text > span, .quick-requirement {
+    display: block; font-size: 9.5pt; color: #1f1f1f;
+  }
+  .quick-requirement, .question-help { font-size: 8pt; color: #5f5f5f; margin-top: 2pt; }
+  .question-help strong { font-weight: 600; color: #4a4a4a; }
+
+  .evidence-field > span { display: block; font-size: 6.8pt; letter-spacing: .08em; text-transform: uppercase; color: #8a8a8a; margin-bottom: 2pt; }
+  .print-value {
+    display: block !important; font-size: 8.5pt; line-height: 1.4; color: #1f1f1f;
+    white-space: pre-wrap; overflow-wrap: anywhere; margin: 0;
+  }
+  .question-controls .print-value { padding: 4pt 6pt; border: .5pt solid #d6d6d6; min-height: 14pt; }
+  .evidence-field .print-value { padding: 4pt 6pt; border: .5pt solid #d6d6d6; min-height: 22pt; color: #333; }
+
+  .site-details { gap: 6pt 14pt; margin: 0 0 12pt; }
+  .site-details label, .site-details .print-value { font-size: 8.5pt; }
+
+  .metrics { gap: 8pt; margin: 10pt 0; }
+  .metric-card, .chart-panel, .details-panel { border: .5pt solid #cfcfcf; background: #fff; break-inside: avoid; }
+  .chart-track { background: #e6e6e6; }
+  .chart-track span { background: #4d4d4d; }
+  .charts { break-inside: avoid; }
+
+  .checklist-page .section-heading .file-actions { display: none !important; }
+  tr, li, .question, .checklist-question { break-inside: avoid; }
+}

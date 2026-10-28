@@ -1,0 +1,10 @@
+.question-title[tabindex], .quick-question[tabindex] { cursor:text; border-radius:6px; }
+.question-title:hover, .quick-question:hover, .question-title:focus-visible, .quick-question:focus-visible { background:#f0f0f0; outline:none; }
+.question-edit { display:block; width:100%; min-height:3.2em; margin:0; padding:8px 10px; resize:vertical; border:1px solid #303030; border-radius:8px; background:#fff; color:#1e1e1e; font:inherit; font-size:13px; line-height:1.55; }
+.question-edit:focus { outline:none; box-shadow:0 0 0 3px #e6e6e6; }
+.question-remove { display:inline-block; margin-top:6px; padding:0; border:0; background:none; color:#6b6b6b; font:inherit; font-size:11px; text-decoration:underline; cursor:pointer; }
+.question-remove:hover, .question-remove:focus-visible { color:#bd5c4d; outline:none; }
+@media print { .question-remove, #restore-questions { display:none !important; } }
+
+.backup-status { align-self:center; color:var(--muted); font-size:12px; }
+.backup-status.error { color:#b75b4b; }
